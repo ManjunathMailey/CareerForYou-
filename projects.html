@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Freelancing Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="internships.html">Internships</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Projects</h1>
+
+        <ul id="project-list" class="list-container">
+            <!-- Projects will be populated here by JavaScript -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Freelance World. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // Example data for projects
+        const projects = [
+            { title: 'Website Redesign', description: 'Redesigning the company website for better user experience.' },
+            { title: 'E-commerce App Development', description: 'Building an e-commerce app from scratch using React.' },
+            { title: 'Mobile Game Development', description: 'Creating a multiplayer mobile game with Unity.' }
+        ];
+
+        // Function to populate project list
+        function populateProjectList() {
+            const projectList = document.getElementById('project-list');
+            if (projectList) {
+                projects.forEach(project => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
+                    li.classList.add('project-item'); // Optional: Add a class for additional styling
+                    projectList.appendChild(li);
+                });
+            }
+        }
+
+        // Call function to populate projects when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', populateProjectList);
+    </script>
+</body>
+</html>
